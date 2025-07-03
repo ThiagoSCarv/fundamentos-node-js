@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
       name: "Thiago",
       email: "thiagocarv4@gmail.com"
     })
-    return res.end("Criação de usúarios")
+    return res.writeHead(201).end()
   }
 
   if (method === "GET" && url === "/users") {
@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
     return res.end(JSON.stringify(users))
   }
 
-  return res.end("Hello World")
+  return res.writeHead(404).end()
 })
 
 server.listen(3333)
